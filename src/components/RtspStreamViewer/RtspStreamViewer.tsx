@@ -1,8 +1,8 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
-const RtspStreamViewer = () => {
-	const streamUrl = "http://localhost:8100/stream.m3u8";
+const RtspStreamViewer = (streamUrl) => {
+	console.log(streamUrl)
 
 	return (
 		<div>
