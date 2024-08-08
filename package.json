@@ -14,7 +14,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@auth/drizzle-adapter": "^1.1.0",
+    "@auth/drizzle-adapter": "^1.4.1",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tanstack/react-query": "^5.50.0",
     "@trpc/client": "^11.0.0-rc.446",
@@ -26,6 +26,7 @@
     "mysql2": "^3.9.7",
     "next": "^14.2.4",
     "next-auth": "^4.24.7",
+    "nodemailer": "^6.9.14",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "superjson": "^2.2.1",
