@@ -4,11 +4,16 @@ This project was built to be a submission for the [Gemini API competition](https
 
 [ZekMVP.webm](https://github.com/user-attachments/assets/2de40ae8-83c3-472a-a56c-dff1bf744df3)
 
+| Screenshot 1    | Screenshot 2 |
+| -------- | ------- |
+|![D1E8B3AC-20F8-401B-B0DD-9D433467DC19_4_5005_c](https://github.com/user-attachments/assets/e2b29fa2-941e-4762-9f04-85546685c7eb) | ![FAB2950C-62FB-465A-A2EF-440FD40548BF_4_5005_c](https://github.com/user-attachments/assets/d1418b6b-e332-41a9-9978-bfce6c453ce0)    |
 
-![D1E8B3AC-20F8-401B-B0DD-9D433467DC19_4_5005_c](https://github.com/user-attachments/assets/e2b29fa2-941e-4762-9f04-85546685c7eb)
 
 
-![FAB2950C-62FB-465A-A2EF-440FD40548BF_4_5005_c](https://github.com/user-attachments/assets/d1418b6b-e332-41a9-9978-bfce6c453ce0)
+
+
+
+
 
 #### Frontend was built with T3 Create app
 
@@ -18,14 +23,15 @@ The frontend is essentially just a viewport at this point in the implementation.
 #### To run:
 
 1. Clone repo
-2. npm i, update environment variables like `DATABASE_URL` (check `env.js`), then npm run dev
+2. npm i, update environment variables like `DATABASE_URL` (check `env.js`), then npm run dev (I chose to use a local instance of MySQL community server and EMAIL PROVIDER for auth)
 3. Unzip zek_backend and update any absolute file paths in the "myapi" in the "fast_api" folder and related scripts accordingly
 4. `pip install -r reqmacos.txt` or only install imported packages by scripts used
-5. Open a separate terminal to run an http server in "zek_backend/stream_server/test_stream" (`python -m http.server 8100`)
-6. Paste your `http://[::]:8100/` into url field on `localhost:3000`
-7. Open separate terminal, change directory to "fast_api"
-8. Set QUERY_GO="True" as environment variable
-9. Run `uvicorn myapi:app --reload --host 0.0.0.0`
+5. Create "env_local.py" in "/path/to/z_gemini/zek_backend/gemini_utils" and add your GOOGLE_API_KEY = ""
+6. Open a separate terminal to run an http server in "zek_backend/stream_server/test_stream" (`python -m http.server 8100`)
+7. Paste your `http://[::]:8100/` into url field on `localhost:3000`
+8. Open separate terminal, change directory to "fast_api"
+9. Set QUERY_GO="True" as environment variable
+10. Run `uvicorn myapi:app --reload --host 0.0.0.0`
 
 
 
