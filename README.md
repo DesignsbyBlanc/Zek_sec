@@ -4,8 +4,8 @@
 
 #### Frontend was built with T3 Create app
 
-The frontend is essentially just a viewport at this point in the implementation. The is no interactivity with chat nor is the the stream being used for anything else. Ultimately, I'd love to use something like the 
-[livekit](https://kitt.livekit.io/) framework to pass the stream directly to Gemini. To simulate what I would like to get done using livekit I have FastAPI serving a json that reads the last stored query from gemini and that is read by the frontend chat component. Ideally, I also have a FastAPI POST route that accepts a RTSP url and then runs the script to convert that to a stream to send back to the frontend. Eliminating the manual process shown in this [video](https://youtu.be/tGvqoIT4iPE). 
+The frontend is essentially just a viewport at this point in the implementation. There is no interactivity with chat or the stream being used for anything else. Ultimately, I'd love to use something like the 
+[livekit](https://kitt.livekit.io/) framework to pass the stream directly to Gemini. To simulate what I would like to get done using livekit I have FastAPI serving a JSON that reads the last stored query from Gemini and the frontend chat component reads that. Ideally, I also have a FastAPI POST route that accepts an RTSP URL and then runs the script to convert that to a stream to send back to the frontend. Eliminating the manual process shown in this [video](https://youtu.be/tGvqoIT4iPE). 
 
 #### To run:
 
