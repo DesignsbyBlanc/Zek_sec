@@ -18,15 +18,14 @@ The frontend is essentially just a viewport at this point in the implementation.
 #### To run:
 
 1. Clone repo
-2. 
-3. npm i, update environment variables like `DATABASE_URL` (check `env.js`), then npm run dev
-4. unzip zek_backend and update any absolute file paths in the "myapi" in the "fast_api" folder and related scripts accordingly
-5. `pip install -r reqmacos.txt` or only install imported packages by scripts used
-6. Open a separate terminal to run an http server in "zek_backend/stream_server/test_stream" (`python -m http.server 8100`)
-7. Paste your `http://[::]:8100/` into url field on `localhost:3000`
-8. Open separate terminal, change directory to "fast_api" 
-9. set QUERY_GO="True" as environment variable
-10. run `uvicorn myapi:app --reload --host 0.0.0.0`
+2. npm i, update environment variables like `DATABASE_URL` (check `env.js`), then npm run dev
+3. Unzip zek_backend and update any absolute file paths in the "myapi" in the "fast_api" folder and related scripts accordingly
+4. `pip install -r reqmacos.txt` or only install imported packages by scripts used
+5. Open a separate terminal to run an http server in "zek_backend/stream_server/test_stream" (`python -m http.server 8100`)
+6. Paste your `http://[::]:8100/` into url field on `localhost:3000`
+7. Open separate terminal, change directory to "fast_api"
+8. Set QUERY_GO="True" as environment variable
+9. Run `uvicorn myapi:app --reload --host 0.0.0.0`
 
 
 
