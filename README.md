@@ -10,28 +10,24 @@ This project was built to be a submission for the [Gemini API competition](https
 
 
 
-
-
-
-
-
 #### Frontend was built with T3 Create app
 
 The frontend is essentially just a viewport at this point in the implementation. There is no interactivity with chat or the stream being used for anything else. Ultimately, I'd love to use something like the 
 [livekit](https://kitt.livekit.io/) framework to pass the stream directly to Gemini. To simulate what I would like to get done using livekit I have FastAPI serving a JSON that reads the last stored query from Gemini and the frontend chat component reads that. Ideally, I also have a FastAPI POST route that accepts an RTSP URL and then runs the script to convert that to a stream to send back to the frontend. Eliminating the manual process shown in this [video](https://youtu.be/tGvqoIT4iPE). I'd also love to add [Homebridge](https://homebridge.io/) and [Home Assistant](https://www.home-assistant.io/) integrations.
 
-#### To run:
+#### To run test case:
 
 1. Clone repo
 2. npm i, update environment variables like `DATABASE_URL` (check `env.js`), then npm run dev (I chose to use a local instance of MySQL community server and EMAIL PROVIDER for auth)
-3. Unzip zek_backend and update any absolute file paths in the "myapi" in the "fast_api" folder and related scripts accordingly
+3. Unzip zek_backend and update any absolute file paths in the "myapi" in the "fast_api" folder and related scripts accordingly (e.g. _script_to_run = '/Path/to/zek_backend/gemini_utils/query_file.py'_ in myapi.py)
 4. `pip install -r reqmacos.txt` or only install imported packages by scripts used
-5. Create "env_local.py" in "/path/to/z_gemini/zek_backend/gemini_utils" and add your GOOGLE_API_KEY = ""
-6. Open a separate terminal to run an http server in "zek_backend/stream_server/test_stream" (`python -m http.server 8100`)
-7. Paste your `http://[::]:8100/` into url field on `localhost:3000`
-8. Open separate terminal, change directory to "fast_api"
-9. Set QUERY_GO="True" as environment variable
-10. Run `uvicorn myapi:app --reload --host 0.0.0.0`
+5. Create "env_local.py" in _"/path/to/z_gemini/zek_backend/gemini_utils"_ and add your _GOOGLE_API_KEY = ""_
+6. Run _"/Path/to/zek_backend/gemini_utils/upload_video_file.py"_ to upload the mp4 files from _"/Path/to/zek_backend/stream_server/test_stream/mp4"_
+7. Open a separate terminal to run an http server in _"/path/to/zek_backend/stream_server/test_stream"_ (`python -m http.server 8100`)
+8. Paste your `http://[::]:8100/` into url field on `localhost:3000`
+9. Open separate terminal, change directory to "fast_api"
+10. Set QUERY_GO="True" as environment variable
+11. Run `uvicorn myapi:app --reload --host 0.0.0.0`
 
 
 
