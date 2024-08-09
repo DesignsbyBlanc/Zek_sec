@@ -4,6 +4,12 @@ This project was built to be a submission for the [Gemini API competition](https
 
 [ZekMVP.webm](https://github.com/user-attachments/assets/2de40ae8-83c3-472a-a56c-dff1bf744df3)
 
+
+![D1E8B3AC-20F8-401B-B0DD-9D433467DC19_4_5005_c](https://github.com/user-attachments/assets/e2b29fa2-941e-4762-9f04-85546685c7eb)
+
+
+![FAB2950C-62FB-465A-A2EF-440FD40548BF_4_5005_c](https://github.com/user-attachments/assets/d1418b6b-e332-41a9-9978-bfce6c453ce0)
+
 #### Frontend was built with T3 Create app
 
 The frontend is essentially just a viewport at this point in the implementation. There is no interactivity with chat or the stream being used for anything else. Ultimately, I'd love to use something like the 
@@ -23,10 +29,6 @@ The frontend is essentially just a viewport at this point in the implementation.
 10. run `uvicorn myapi:app --reload --host 0.0.0.0`
 
 
-![D1E8B3AC-20F8-401B-B0DD-9D433467DC19_4_5005_c](https://github.com/user-attachments/assets/e2b29fa2-941e-4762-9f04-85546685c7eb)
-
-
-![FAB2950C-62FB-465A-A2EF-440FD40548BF_4_5005_c](https://github.com/user-attachments/assets/d1418b6b-e332-41a9-9978-bfce6c453ce0)
 
 #### Gemini Code: 
 This portion of the code performs the query and writes the response to a JSON file that is then served by FastAPI and read by the Web app.
