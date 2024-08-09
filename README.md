@@ -28,5 +28,67 @@ The frontend is essentially just a viewport at this point in the implementation.
 
 ![FAB2950C-62FB-465A-A2EF-440FD40548BF_4_5005_c](https://github.com/user-attachments/assets/d1418b6b-e332-41a9-9978-bfce6c453ce0)
 
+#### Gemini Code: 
+This portion of the code performs the query and writes the response to a JSON file that is then served by FastAPI and read by the Web app.
+``` python
+
+def query(filey, chosen_file="segment_2.mp4"):
+    try:
+        if filey[chosen_file]:
+            # Create the prompt.
+            prompt = "Describe this video. Use the date and time stamp as for bullet points"
+
+            # Set the model to Gemini 1.5 Pro.
+            model = genai.GenerativeModel(model_name="models/gemini-1.5-pro-latest")
+
+            # Make the LLM request.
+            print("Making LLM inference request...")
+            response = model.generate_content([prompt, filey[chosen_file]],
+                                            request_options={"timeout": 600})
+            
+            with open("/path/to/chat_response.json", 'w') as file:
+                json.dump(response.text, file, indent=4)
+            # print(response.text)
+            # return(response.text)
+    except Exception as e:
+        print(f"File does {e} not exist")
+
+
+
+```
+
+This portion uploads the video files to Gemini:
+
+```Python
+
+def up_files_genai():
+    genai.configure(api_key=GOOGLE_API_KEY)
+
+    folder_name = "/path/to/zek_backend/stream_server/test_stream/mp4/"
+
+    streams = all_folder_files(folder=folder_name, file_extension="mp4")
+    dc_of_uploads = {}
+
+    for s in streams:
+        print(f"\n Uploading file... \n")
+        video_file = genai.upload_file(path=s)
+        print(video_file)
+        print(f"Completed upload: {video_file.uri}")
+        dc_of_uploads[video_file.display_name] = video_file
+
+        while video_file.state.name == "PROCESSING":
+            print('.', end='')
+            time.sleep(10)
+            video_file = genai.get_file(video_file.name)
+
+
+        if video_file.state.name == "FAILED":
+            raise ValueError(video_file.state.name)
+
+    return dc_of_uploads
+
+
+```
+
 
 
