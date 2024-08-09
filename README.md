@@ -1,5 +1,7 @@
 # Zek Security
 
+This project was built to be a submission for the [Gemini API competition](https://ai.google.dev/competition)
+
 [ZekMVP.webm](https://github.com/user-attachments/assets/2de40ae8-83c3-472a-a56c-dff1bf744df3)
 
 #### Frontend was built with T3 Create app
