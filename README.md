@@ -1,29 +1,27 @@
-# Create T3 App
+# Zek Security
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Frontend was built with T3 Create app
 
-## What's next? How do I make an app with this?
+The frontend is essentially just a viewport at this point in the implementation. The is no interactivity with chat nor is the the stream being used for anything else. Ultimately, I'd love to use something like the 
+[livekit](https://kitt.livekit.io/) framework to pass the stream directly to Gemini. To simulate what I would like to get done using livekit I have FastAPI serving a json that reads the last stored query from gemini and that is read by the frontend chat component. Ideally, I also have a FastAPI POST route that accepts a RTSP url and then runs the script to convert that to a stream to send back to the frontend. Eliminating the manual process shown in this [video](https://youtu.be/tGvqoIT4iPE). 
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+To run:
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+1. Clone repo
+2. npm i, npm run dev
+3. unzip zek_backend and update any absolute file paths in the "myapi" in the "fast_api" folder and related scripts accordingly
+4. `pip install -r reqmacos.txt` or only install imported packages by scripts used
+5. Open a separate terminal to run an http server in "zek_backend/stream_server/test_stream" (`python -m http.server 8100`)
+6. Paste your `http://[::]:8100/` into url field on `localhost:3000`
+7. Open separate terminal, change directory to "fast_api" 
+8. set QUERY_GO="True" as environment variable
+9. run `uvicorn myapi:app --reload --host 0.0.0.0`
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
 
-## Learn More
+![D1E8B3AC-20F8-401B-B0DD-9D433467DC19_4_5005_c](https://github.com/user-attachments/assets/e2b29fa2-941e-4762-9f04-85546685c7eb)
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+![FAB2950C-62FB-465A-A2EF-440FD40548BF_4_5005_c](https://github.com/user-attachments/assets/d1418b6b-e332-41a9-9978-bfce6c453ce0)
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
 
-## How do I deploy this?
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
