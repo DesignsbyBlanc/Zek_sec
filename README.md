@@ -32,7 +32,7 @@ The frontend is essentially just a viewport at this point in the implementation.
 
 
 #### Gemini Code: 
-This portion of the code performs the query and writes the response to a JSON file that is then served by FastAPI and read by the Web app.
+This portion of the code performs the query and writes the response to a JSON file that is then served by FastAPI and read by the frontend.
 ``` python
 
 def query(filey, chosen_file="segment_2.mp4"):
